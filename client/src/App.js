@@ -11,6 +11,7 @@ import axios from 'axios'
 import Auth from './modules/Auth'
 import Header from './components/Header'
 import Register from './components/Register'
+import Login from './components/Login'
 
 class App extends Component {
   constructor(){
@@ -92,6 +93,18 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
+          <Route
+            exact
+            path='/login'
+            render={() =>
+              <Login
+                loginUsername={this.state.loginUsername}
+                loginPassword={this.state.loginPassword}
+                handleInputChange={this.handleInputChange}
+                handleLoginSubmit={this.handleLoginSubmit}
+              />
+            }
+          />
           <Route
             exact
             path='/register'
