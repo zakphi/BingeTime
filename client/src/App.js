@@ -26,6 +26,7 @@ class App extends Component {
 
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
+    this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
   }
 
   handleInputChange(e){
@@ -50,6 +51,30 @@ class App extends Component {
             auth: Auth.isUserAuthenticated(),
             loginUsername: null,
             loginPassword: null
+          })
+        }
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
+  handleRegisterSubmit(e){
+    e.preventDefault()
+    axios.post('/users', {
+      user: {
+        first_name: this.state.registerFirstName,
+        last_name: this.state.registerLastName,
+        email: this.state.registerEmail,
+        username: this.state.registerUsername,
+        password: this.state.registerPassword
+      }
+    })
+      .then(res => {
+        if(res.data.token){
+          Auth.authenticateToken(res.data.token)
+          this.setState({
+            auth: auth.isUserAuthenticated()
           })
         }
       })
