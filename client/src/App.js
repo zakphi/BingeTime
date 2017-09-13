@@ -9,6 +9,22 @@ import {
 import axios from 'axios'
 
 class App extends Component {
+  constructor(){
+    super()
+
+    this.state = {
+      auth: Auth.isUserAuthenticated(),
+      fireRedirect: false,
+      loginUsername: null,
+      loginPassword: null,
+      registerFirstName: null,
+      registerLastName: null,
+      registerEmail: null,
+      registerUsername: null,
+      registerPassword: null
+    }
+  }
+  
   render() {
     return (
       <div className="App">
