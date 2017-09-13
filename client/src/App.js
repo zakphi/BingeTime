@@ -128,7 +128,6 @@ class App extends Component {
             path='/register'
             render={() =>
               <Register
-                auth={this.state.auth}
                 registerFirstName={this.state.registerFirstName}
                 registerLastName={this.state.registerLastName}
                 registerEmail={this.state.registerEmail}
