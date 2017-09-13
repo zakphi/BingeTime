@@ -88,8 +88,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+        </div>
+      </Router>
     );
   }
 }
