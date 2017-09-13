@@ -76,7 +76,7 @@ class App extends Component {
         if(res.data.token){
           Auth.authenticateToken(res.data.token)
           this.setState({
-            auth: auth.isUserAuthenticated()
+            auth: Auth.isUserAuthenticated()
           })
         }
       })
