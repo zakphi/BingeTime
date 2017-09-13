@@ -23,8 +23,18 @@ class App extends Component {
       registerUsername: null,
       registerPassword: null
     }
+
+    this.handleInputChange = this.handleInputChange.bind(this)
   }
-  
+
+  handleInputChange(e){
+    const name = e.target.name
+    const value = e.target.value
+    this.setState({
+      [name]: value
+    })
+  }
+
   render() {
     return (
       <div className="App">
