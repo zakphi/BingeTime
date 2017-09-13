@@ -1,9 +1,9 @@
 import React from 'react'
 import Nav from './Nav'
 
-const Header = () => {
+const Header = props => {
   return(
-    <Nav />
+    <Nav logoutUser={props.logoutUser} />
   )
 }
 

@@ -110,7 +110,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Header />
+          <Header logoutUser={this.logoutUser} />
           <Route
             exact
             path='/login'
