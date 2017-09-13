@@ -8,6 +8,8 @@ import {
 } from 'react-router-dom'
 import axios from 'axios'
 
+import Auth from './modules/Auth'
+
 class App extends Component {
   constructor(){
     super()
