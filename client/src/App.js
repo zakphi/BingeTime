@@ -10,6 +10,7 @@ import axios from 'axios'
 
 import Auth from './modules/Auth'
 import Header from './components/Header'
+import Register from './components/Register'
 
 class App extends Component {
   constructor(){
@@ -91,6 +92,22 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
+          <Route
+            exact
+            path='/register'
+            render={() =>
+              <Register
+                auth={this.state.auth}
+                registerFirstName={this.state.registerFirstName}
+                registerLastName={this.state.registerLastName}
+                registerEmail={this.state.registerEmail}
+                registerUsername={this.state.registerUsername}
+                registerPassword={this.state.registerPassword}
+                handleInputChange={this.handleInputChange}
+                handleRegisterSubmit={this.handleRegisterSubmit}
+              />
+            }
+          />
         </div>
       </Router>
     );
