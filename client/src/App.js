@@ -32,6 +32,7 @@ class App extends Component {
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
+    this.logoutUser = this.logoutUser.bind(this)
   }
 
   handleInputChange(e){
@@ -85,6 +86,23 @@ class App extends Component {
       })
       .catch(err => {
         console.log(err)
+      })
+  }
+
+  logoutUser(){
+    axios.delete('/logout', {
+      headers: {
+        'Authorization': `Token ${Auth.getToken()}`,
+        token: Auth.getToken()
+      }
+    })
+      .then(res => {
+        Auth.deauthenticateUser()
+        this.setState({
+          auth: Auth.isUserAuthenticated(),
+          loginUsername: null,
+          loginPassword: null
+        })
       })
   }
 
