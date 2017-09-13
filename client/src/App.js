@@ -9,6 +9,7 @@ import {
 import axios from 'axios'
 
 import Auth from './modules/Auth'
+import Header from './components/Header'
 
 class App extends Component {
   constructor(){
