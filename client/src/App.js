@@ -21,13 +21,13 @@ class App extends Component {
     this.state = {
       auth: Auth.isUserAuthenticated(),
       fireRedirect: false,
-      loginUsername: null,
-      loginPassword: null,
-      registerFirstName: null,
-      registerLastName: null,
-      registerEmail: null,
-      registerUsername: null,
-      registerPassword: null
+      loginUsername: '',
+      loginPassword: '',
+      registerFirstName: '',
+      registerLastName: '',
+      registerEmail: '',
+      registerUsername: '',
+      registerPassword: ''
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -56,8 +56,8 @@ class App extends Component {
           Auth.authenticateToken(res.data.token)
           this.setState({
             auth: Auth.isUserAuthenticated(),
-            loginUsername: null,
-            loginPassword: null,
+            loginUsername: '',
+            loginPassword: '',
             fireRedirect: true
           })
         }
@@ -103,8 +103,8 @@ class App extends Component {
         Auth.deauthenticateUser()
         this.setState({
           auth: Auth.isUserAuthenticated(),
-          loginUsername: null,
-          loginPassword: null,
+          loginUsername: '',
+          loginPassword: '',
           fireRedirect: false
         })
       })
