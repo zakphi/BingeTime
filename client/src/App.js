@@ -13,6 +13,7 @@ import Header from './components/Header'
 import Register from './components/Register'
 import Login from './components/Login'
 import Profile from './components/Profile'
+import Home from './components/Home'
 
 class App extends Component {
   constructor(){
@@ -138,6 +139,7 @@ class App extends Component {
             }
           />
           <Route exact path='/profile' component={Profile} />
+          <Route exact path='/' component={Home} />
           {this.state.fireRedirect ? <Redirect push to={'/'} /> : '' }
         </div>
       </Router>
