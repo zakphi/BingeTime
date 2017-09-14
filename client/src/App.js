@@ -29,14 +29,9 @@ class App extends Component {
       registerUsername: '',
       registerPassword: ''
     }
-
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
-    this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
-    this.logoutUser = this.logoutUser.bind(this)
   }
 
-  handleInputChange(e){
+  handleInputChange = (e) => {
     const name = e.target.name
     const value = e.target.value
     this.setState({
@@ -44,7 +39,7 @@ class App extends Component {
     })
   }
 
-  handleLoginSubmit(e){
+  handleLoginSubmit = (e) => {
     e.preventDefault()
     axios.post('/login', {
       username: this.state.loginUsername,
@@ -67,7 +62,7 @@ class App extends Component {
       })
     }
 
-    handleRegisterSubmit(e){
+    handleRegisterSubmit = (e) => {
       e.preventDefault()
       axios.post('/users', {
         user: {
@@ -92,7 +87,7 @@ class App extends Component {
       })
   }
 
-  logoutUser(){
+  logoutUser = () => {
     axios.delete('/logout', {
       headers: {
         'Authorization': `Token ${Auth.getToken()}`,
