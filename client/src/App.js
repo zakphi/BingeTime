@@ -12,6 +12,7 @@ import Auth from './modules/Auth'
 import Header from './components/Header'
 import Register from './components/Register'
 import Login from './components/Login'
+import Profile from './components/Profile'
 
 class App extends Component {
   constructor(){
@@ -139,6 +140,13 @@ class App extends Component {
                 handleInputChange={this.handleInputChange}
                 handleRegisterSubmit={this.handleRegisterSubmit}
               />
+            }
+          />
+          <Route
+            exact
+            path='/profile'
+            render={() =>
+              <Profile />
             }
           />
           {this.state.fireRedirect ? <Redirect push to={'/'} /> : '' }
