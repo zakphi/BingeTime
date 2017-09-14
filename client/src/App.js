@@ -56,31 +56,33 @@ class App extends Component {
           this.setState({
             auth: Auth.isUserAuthenticated(),
             loginUsername: null,
-            loginPassword: null
+            loginPassword: null,
+            fireRedirect: true
           })
         }
       })
       .catch(err => {
         console.log(err)
       })
-  }
+    }
 
-  handleRegisterSubmit(e){
-    e.preventDefault()
-    axios.post('/users', {
-      user: {
-        first_name: this.state.registerFirstName,
-        last_name: this.state.registerLastName,
-        email: this.state.registerEmail,
-        username: this.state.registerUsername,
-        password: this.state.registerPassword
-      }
-    })
+    handleRegisterSubmit(e){
+      e.preventDefault()
+      axios.post('/users', {
+        user: {
+          first_name: this.state.registerFirstName,
+          last_name: this.state.registerLastName,
+          email: this.state.registerEmail,
+          username: this.state.registerUsername,
+          password: this.state.registerPassword
+        }
+      })
       .then(res => {
         if(res.data.token){
           Auth.authenticateToken(res.data.token)
           this.setState({
-            auth: Auth.isUserAuthenticated()
+            auth: Auth.isUserAuthenticated(),
+            fireRedirect: true
           })
         }
       })
@@ -101,7 +103,8 @@ class App extends Component {
         this.setState({
           auth: Auth.isUserAuthenticated(),
           loginUsername: null,
-          loginPassword: null
+          loginPassword: null,
+          fireRedirect: false
         })
       })
   }
@@ -138,6 +141,7 @@ class App extends Component {
               />
             }
           />
+          {this.state.fireRedirect ? <Redirect push to={'/'} /> : '' }
         </div>
       </Router>
     );
