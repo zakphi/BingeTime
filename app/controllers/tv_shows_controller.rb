@@ -2,9 +2,10 @@ class TvShowsController < ApiController
   before_action :require_login, except: [:show, :search]
 
   def show
-    tv_show = TvShow.find(params[:id])
-    tv_show_user = tvshow.user
-    render json: { tv_show: tv_show, users: tvshow_user.username }
+    showID = params[:id]
+    tmdb_key = Rails.application.secrets.api_key
+    response = HTTParty.get("https://api.themoviedb.org/3/tv/#{showID}?api_key=#{tmdb_key}")
+    render json: response
   end
 
   def create
