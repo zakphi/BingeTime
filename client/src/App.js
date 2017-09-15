@@ -29,7 +29,9 @@ class App extends Component {
       registerEmail: '',
       registerUsername: '',
       registerPassword: '',
-      showName: ''
+      showName: '',
+      showResults: null,
+      searchResultsLoaded: false
     }
   }
 
@@ -116,7 +118,11 @@ class App extends Component {
       }
     })
       .then(res => {
-        console.log(res)
+        console.log(res.data.results)
+        this.setState({
+          showResults: res.data.results,
+          searchResultsLoaded: true
+        })
       })
   }
 
@@ -161,6 +167,8 @@ class App extends Component {
                 showName={this.state.showName}
                 handleShowSearch={this.handleShowSearch}
                 handleInputChange={this.handleInputChange}
+                showResults={this.state.showResults}
+                searchResultsLoaded={this.state.searchResultsLoaded}
               />
             }
           />
