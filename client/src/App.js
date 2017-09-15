@@ -31,7 +31,9 @@ class App extends Component {
       registerPassword: '',
       showName: '',
       showResults: null,
-      searchResultsLoaded: false
+      searchResultsLoaded: false,
+      showID: '',
+      singleShowData: ''
     }
   }
 
