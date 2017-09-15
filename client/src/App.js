@@ -28,7 +28,8 @@ class App extends Component {
       registerLastName: '',
       registerEmail: '',
       registerUsername: '',
-      registerPassword: ''
+      registerPassword: '',
+      showName: ''
     }
   }
 
@@ -103,6 +104,19 @@ class App extends Component {
           loginPassword: '',
           fireRedirect: false
         })
+      })
+  }
+
+  handleShowSearch = (e) => {
+    e.preventDefault()
+    axios('/search', {
+      method: 'POST',
+      data: {
+        showName: this.state.showName
+      }
+    })
+      .then(res => {
+        console.log(res)
       })
   }
 
