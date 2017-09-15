@@ -16,7 +16,12 @@ const Home = props => {
         <input type='submit' />
       </form>
       {props.searchResultsLoaded
-        ? <SearchResults showResults={props.showResults} searchResultsLoaded={props.searchResultsLoaded} />
+        ? <SearchResults
+            showResults={props.showResults}
+            searchResultsLoaded={props.searchResultsLoaded}
+            handleSingleShowSearch={props.handleSingleShowSearch}
+            showID={props.showID}
+          />
         : ''}
     </div>
   )

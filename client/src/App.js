@@ -128,6 +128,20 @@ class App extends Component {
       })
   }
 
+  handleSingleShowSearch = (showID) => {
+    axios(`/tv_shows/${showID}`, {
+      method: 'GET',
+      data: {
+        showID: this.state.showID
+      }
+    })
+      .then(res => {
+        this.setState({
+          singleShowData: res.data
+        })
+      })
+  }
+
   render() {
     return (
       <Router>
@@ -171,6 +185,8 @@ class App extends Component {
                 handleInputChange={this.handleInputChange}
                 showResults={this.state.showResults}
                 searchResultsLoaded={this.state.searchResultsLoaded}
+                handleSingleShowSearch={this.handleSingleShowSearch}
+                showID={this.state.showID}
               />
             }
           />

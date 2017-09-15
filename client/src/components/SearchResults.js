@@ -5,7 +5,12 @@ class SearchResults extends Component{
   renderSearchResults(){
     if(this.props.searchResultsLoaded){
       return this.props.showResults.map(result => {
-        return <Result key={result.id} result={result}/>
+        return <Result
+                  key={result.id}
+                  result={result}
+                  handleSingleShowSearch={this.props.handleSingleShowSearch}
+                  showID={this.props.showID}
+                />
       })
     }
   }
