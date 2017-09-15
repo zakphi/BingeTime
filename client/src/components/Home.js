@@ -1,4 +1,5 @@
 import React from 'react'
+import SearchResults from './SearchResults'
 
 const Home = props => {
   return(
@@ -14,6 +15,9 @@ const Home = props => {
         />
         <input type='submit' />
       </form>
+      {props.searchResultsLoaded
+        ? <SearchResults showResults={props.showResults} searchResultsLoaded={props.searchResultsLoaded} />
+        : ''}
     </div>
   )
 }
