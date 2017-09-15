@@ -153,7 +153,17 @@ class App extends Component {
             }
           />
           <Route exact path='/profile' component={Profile} />
-          <Route exact path='/' component={Home} />
+          <Route
+            exact
+            path='/'
+            render={() =>
+              <Home
+                showName={this.state.showName}
+                handleShowSearch={this.handleShowSearch}
+                handleInputChange={this.handleInputChange}
+              />
+            }
+          />
           {this.state.fireRedirect ? <Redirect push to={'/'} /> : '' }
         </div>
       </Router>
