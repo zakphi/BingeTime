@@ -4,8 +4,14 @@ const Home = props => {
   return(
     <div>
       <h1>home</h1>
-      <form>
-        <input type='text' name='showSearch' placeholder='Search for Show' />
+      <form onSubmit={props.handleShowSearch}>
+        <input
+          type='text'
+          name='showName'
+          placeholder='Search for Show'
+          value={props.showName}
+          onChange={props.handleInputChange}
+        />
         <input type='submit' />
       </form>
     </div>
