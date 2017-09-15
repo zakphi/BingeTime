@@ -14,6 +14,7 @@ import Register from './components/Register'
 import Login from './components/Login'
 import Profile from './components/Profile'
 import Home from './components/Home'
+import SingleShow from './components/SingleShow'
 
 class App extends Component {
   constructor(){
@@ -137,7 +138,8 @@ class App extends Component {
     })
       .then(res => {
         this.setState({
-          singleShowData: res.data
+          singleShowData: res.data,
+          showID
         })
       })
   }
@@ -187,6 +189,15 @@ class App extends Component {
                 searchResultsLoaded={this.state.searchResultsLoaded}
                 handleSingleShowSearch={this.handleSingleShowSearch}
                 showID={this.state.showID}
+              />
+            }
+          />
+          <Route
+            exact
+            path={`/tv_shows/${this.state.showID}`}
+            render={() =>
+              <SingleShow
+                singleShowData={this.state.singleShowData}
               />
             }
           />
