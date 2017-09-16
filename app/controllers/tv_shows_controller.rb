@@ -24,9 +24,10 @@ class TvShowsController < ApiController
   def search
     showName = params[:showName]
     tmdb_key = Rails.application.secrets.api_key
-    response = HTTParty.get("https://api.themoviedb.org/3/search/tv?query=#{showName}&api_key=#{tmdb_key}")
+    search_res = HTTParty.get("https://api.themoviedb.org/3/search/tv?query=#{showName}&api_key=#{tmdb_key}")
+    config_res = HTTParty.get("https://api.themoviedb.org/3/configuration?api_key=#{tmdb_key}")
 
-    render json: response
+    render json: {search_res: search_res, config_res: config_res}
   end
 
   private
