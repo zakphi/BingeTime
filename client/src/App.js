@@ -142,6 +142,12 @@ class App extends Component {
           showID
         })
       })
+      .then(
+        this.setState({
+          searchResultsLoaded: false,
+          showName: ''
+        })
+      )
   }
 
   render() {
