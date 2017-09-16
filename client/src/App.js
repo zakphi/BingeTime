@@ -160,6 +160,22 @@ class App extends Component {
           <Header logoutUser={this.logoutUser} />
           <Route
             exact
+            path='/'
+            render={() =>
+              <Home
+              showName={this.state.showName}
+              handleShowSearch={this.handleShowSearch}
+              handleInputChange={this.handleInputChange}
+              showResults={this.state.showResults}
+              searchResultsLoaded={this.state.searchResultsLoaded}
+              handleSingleShowSearch={this.handleSingleShowSearch}
+              showID={this.state.showID}
+              configResults={this.state.configResults}
+              />
+            }
+          />
+          <Route
+            exact
             path='/login'
             render={() =>
               <Login
@@ -186,22 +202,6 @@ class App extends Component {
             }
           />
           <Route exact path='/profile' component={Profile} />
-          <Route
-            exact
-            path='/'
-            render={() =>
-              <Home
-                showName={this.state.showName}
-                handleShowSearch={this.handleShowSearch}
-                handleInputChange={this.handleInputChange}
-                showResults={this.state.showResults}
-                searchResultsLoaded={this.state.searchResultsLoaded}
-                handleSingleShowSearch={this.handleSingleShowSearch}
-                showID={this.state.showID}
-                configResults={this.state.configResults}
-              />
-            }
-          />
           <Route
             exact
             path={`/tv_shows/${this.state.showID}`}
