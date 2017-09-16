@@ -21,6 +21,7 @@ const Home = props => {
             searchResultsLoaded={props.searchResultsLoaded}
             handleSingleShowSearch={props.handleSingleShowSearch}
             showID={props.showID}
+            configResults={props.configResults}
           />
         : ''}
     </div>

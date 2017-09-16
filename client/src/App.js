@@ -198,6 +198,7 @@ class App extends Component {
                 searchResultsLoaded={this.state.searchResultsLoaded}
                 handleSingleShowSearch={this.handleSingleShowSearch}
                 showID={this.state.showID}
+                configResults={this.state.configResults}
               />
             }
           />

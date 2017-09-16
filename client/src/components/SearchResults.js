@@ -10,6 +10,7 @@ class SearchResults extends Component{
                   result={result}
                   handleSingleShowSearch={this.props.handleSingleShowSearch}
                   showID={this.props.showID}
+                  configResults={this.props.configResults}
                 />
       })
     }
