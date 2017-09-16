@@ -208,6 +208,7 @@ class App extends Component {
             render={() =>
               <SingleShow
                 singleShowData={this.state.singleShowData}
+                configResults={this.state.configResults}
               />
             }
           />
