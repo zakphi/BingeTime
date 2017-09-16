@@ -9,7 +9,7 @@ const Result = props => {
   let poster_image = props.result.poster_path === null ? image : `${base_url}${image_size}${poster_path}`
 
   return(
-    <div>
+    <article className='searchResult'>
       <Link
         to={`/tv_shows/${props.result.id}`}
         onClick={ () => {props.handleSingleShowSearch(props.result.id)} }>
@@ -18,7 +18,7 @@ const Result = props => {
               alt={props.result.original_name}
           />
         </Link>
-    </div>
+    </article>
   )
 }
 

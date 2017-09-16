@@ -18,12 +18,10 @@ class SearchResults extends Component{
 
   render(){
     return(
-      <div>
+      <section className='searchResults'>
         <h1>search results</h1>
-        <div>
-          {this.renderSearchResults()}
-        </div>
-      </div>
+        {this.renderSearchResults()}
+      </section>
       )
   }
 }

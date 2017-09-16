@@ -21,14 +21,14 @@ const SingleShow = props => {
   }
 
   return(
-    <div style={divStyle}>
-      <div>
+    <section className='singleShow' style={divStyle}>
+      <article className='showInfo'>
         <h1>{props.singleShowData.original_name}</h1>
         <p>{props.singleShowData.overview}</p>
         <p>{props.singleShowData.original_name} has {props.singleShowData.number_of_seasons} seasons consisting of {props.singleShowData.number_of_episodes} episodes.</p>
         <p>It will approximately take you {formattedBingeTime} to watch all of {props.singleShowData.original_name}</p>
-      </div>
-    </div>
+      </article>
+    </section>
   )
 }
 
