@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import image from '../imgComingSoon.png'
 
-const Result = props => {
+const SearchResult = props => {
   let base_url = props.configResults.secure_base_url
   let image_size = 'w185'
   let poster_path = props.result.poster_path
@@ -22,4 +22,4 @@ const Result = props => {
   )
 }
 
-export default Result
+export default SearchResult

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Result from './Result'
+import SearchResult from './SearchResult'
 
 class SearchResults extends Component{
   renderSearchResults(){
     if(this.props.searchResultsLoaded){
       return this.props.showResults.map(result => {
-        return <Result
+        return <SearchResult
                   key={result.id}
                   result={result}
                   handleSingleShowSearch={this.props.handleSingleShowSearch}
