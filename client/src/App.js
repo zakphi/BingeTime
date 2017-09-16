@@ -34,7 +34,8 @@ class App extends Component {
       showResults: null,
       searchResultsLoaded: false,
       showID: '',
-      singleShowData: ''
+      singleShowData: '',
+      configResults: null
     }
   }
 
@@ -121,9 +122,11 @@ class App extends Component {
       }
     })
       .then(res => {
-        console.log(res.data.results)
+        console.log(res.data.config_res)
+        console.log(res.data.search_res)
         this.setState({
-          showResults: res.data.results,
+          showResults: res.data.search_res.results,
+          configResults: res.data.config_res.images,
           searchResultsLoaded: true
         })
       })
