@@ -67,19 +67,19 @@ class App extends Component {
       .catch(err => {
         console.log(err)
       })
-    }
+  }
 
-    handleRegisterSubmit = (e) => {
-      e.preventDefault()
-      axios.post('/users', {
-        user: {
-          first_name: this.state.registerFirstName,
-          last_name: this.state.registerLastName,
-          email: this.state.registerEmail,
-          username: this.state.registerUsername,
-          password: this.state.registerPassword
-        }
-      })
+  handleRegisterSubmit = (e) => {
+    e.preventDefault()
+    axios.post('/users', {
+      user: {
+        first_name: this.state.registerFirstName,
+        last_name: this.state.registerLastName,
+        email: this.state.registerEmail,
+        username: this.state.registerUsername,
+        password: this.state.registerPassword
+      }
+    })
       .then(res => {
         if(res.data.token){
           Auth.authenticateToken(res.data.token)
