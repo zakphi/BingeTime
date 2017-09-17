@@ -54,7 +54,6 @@ class App extends Component {
       password: this.state.loginPassword
     })
       .then(res => {
-        console.log(res)
         if(res.data.token){
           Auth.authenticateToken(res.data.token)
           this.setState({
@@ -122,8 +121,6 @@ class App extends Component {
       }
     })
       .then(res => {
-        console.log(res.data.config_res)
-        console.log(res.data.search_res)
         this.setState({
           showResults: res.data.search_res.results,
           configResults: res.data.config_res.images,
