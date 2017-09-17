@@ -2,7 +2,7 @@ import React from 'react'
 
 const SingleShow = props => {
 
-  let totalMinutes = props.singleShowData.number_of_episodes * props.singleShowData.episode_run_time[0]
+  let totalMinutes = props.singleShowData.number_of_episodes * props.singleShowData.episode_run_time[0] || 0
   let days = Math.floor(totalMinutes / 1440);
   let hours = Math.floor((totalMinutes - days * 1440) / 60);
   let minutes = Math.floor(totalMinutes - (days * 1440) - (hours * 60))
