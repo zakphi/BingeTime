@@ -35,7 +35,8 @@ class App extends Component {
       searchResultsLoaded: false,
       showID: '',
       singleShowData: '',
-      configResults: null
+      configResults: null,
+      userProfile: null
     }
   }
 
@@ -63,6 +64,17 @@ class App extends Component {
             fireRedirect: true
           })
         }
+        axios.get('/profile', {
+          headers: {
+            'Authorization': `Token ${Auth.getToken()}`,
+            token: Auth.getToken()
+          }
+        })
+          .then(res => {
+            this.setState({
+              userProfile: res.data.user
+            })
+          })
       })
       .catch(err => {
         console.log(err)
@@ -198,7 +210,13 @@ class App extends Component {
               />
             }
           />
-          <Route exact path='/profile' component={Profile} />
+          <Route
+            exact
+            path='/profile'
+            render={() =>
+              <Profile userProfile={this.state.userProfile} />
+            }
+          />
           <Route
             exact
             path={`/tv_shows/${this.state.showID}`}
