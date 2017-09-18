@@ -172,14 +172,14 @@ class App extends Component {
             path='/'
             render={() =>
               <Home
-              showName={this.state.showName}
-              handleShowSearch={this.handleShowSearch}
-              handleInputChange={this.handleInputChange}
-              showResults={this.state.showResults}
-              searchResultsLoaded={this.state.searchResultsLoaded}
-              handleSingleShowSearch={this.handleSingleShowSearch}
-              showID={this.state.showID}
-              configResults={this.state.configResults}
+                showName={this.state.showName}
+                handleShowSearch={this.handleShowSearch}
+                handleInputChange={this.handleInputChange}
+                showResults={this.state.showResults}
+                searchResultsLoaded={this.state.searchResultsLoaded}
+                handleSingleShowSearch={this.handleSingleShowSearch}
+                showID={this.state.showID}
+                configResults={this.state.configResults}
               />
             }
           />
