@@ -162,6 +162,31 @@ class App extends Component {
       )
   }
 
+  handleSaveShow = () => {
+    axios('/tv_shows', {
+      method: 'POST',
+      data: {
+        tv_show: {
+          external_id: this.state.singleShowData.id,
+          title: this.state.singleShowData.original_name,
+          summary: this.state.singleShowData.overview,
+          poster_path: this.state.singleShowData.poster_path,
+          run_time: this.state.singleShowData.episode_run_time[0]
+        }
+      },
+      headers: {
+        'Authorization': `Token ${Auth.getToken()}`,
+        token: Auth.getToken()
+      }
+    })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   render() {
     return (
       <Router>
@@ -224,6 +249,8 @@ class App extends Component {
               <SingleShow
                 singleShowData={this.state.singleShowData}
                 configResults={this.state.configResults}
+                handleSaveShow={this.handleSaveShow}
+                auth={this.state.auth}
               />
             }
           />

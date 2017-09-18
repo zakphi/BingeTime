@@ -10,7 +10,7 @@ class TvShowsController < ApiController
 
   def create
     tv_show = TvShow.new(tv_show_params)
-    # tv_show.user = current_user
+    tv_show.user = current_user
     if tv_show.save
       render json: {
         message: 'ok',

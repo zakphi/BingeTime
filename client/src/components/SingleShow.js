@@ -28,6 +28,9 @@ const SingleShow = props => {
         <p>{props.singleShowData.original_name} has {props.singleShowData.number_of_seasons} seasons consisting of {props.singleShowData.number_of_episodes} episodes.</p>
         <p>It will approximately take you {formattedBingeTime} to watch all of {props.singleShowData.original_name}</p>
       </article>
+      {props.auth
+        ? <button onClick={props.handleSaveShow}>save show</button>
+        : ''}
     </section>
   )
 }
