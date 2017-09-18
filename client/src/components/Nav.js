@@ -17,7 +17,7 @@ const Nav = props => {
           : ''}
         {!Auth.isUserAuthenticated()
           ? <li>
-              <Link to='/register'>Regiser</Link>
+              <Link to='/register'>Register</Link>
             </li>
           : ''}
         {Auth.isUserAuthenticated()
