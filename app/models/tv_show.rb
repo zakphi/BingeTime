@@ -1,3 +1,3 @@
 class TvShow < ApplicationRecord
-  has_many :users, through: :binge_shows
+  belongs_to :user
 end
