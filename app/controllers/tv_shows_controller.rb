@@ -1,5 +1,8 @@
 class TvShowsController < ApiController
-  before_action :require_login, except: [:show, :search]
+  def index
+    tv_shows = TvShow.where(user_id: current_user.id)
+    render json: tv_shows
+  end
 
   def show
     showID = params[:id]
