@@ -1,4 +1,6 @@
 class TvShowsController < ApiController
+  before_action :require_login, except: [:show, :search, :img_config]
+
   def index
     tv_shows = TvShow.where(user_id: current_user.id)
     render json: tv_shows
@@ -28,9 +30,15 @@ class TvShowsController < ApiController
     showName = params[:showName]
     tmdb_key = Rails.application.secrets.api_key
     search_res = HTTParty.get("https://api.themoviedb.org/3/search/tv?query=#{showName}&api_key=#{tmdb_key}")
-    config_res = HTTParty.get("https://api.themoviedb.org/3/configuration?api_key=#{tmdb_key}")
 
-    render json: {search_res: search_res, config_res: config_res}
+    render json: search_res
+  end
+
+  def img_config
+    tmdb_key = Rails.application.secrets.api_key
+    response = HTTParty.get("https://api.themoviedb.org/3/configuration?api_key=#{tmdb_key}")
+
+    render json: response
   end
 
   private

@@ -34,10 +34,18 @@ class App extends Component {
       showResults: null,
       searchResultsLoaded: false,
       showID: '',
-      singleShowData: '',
-      configResults: null,
-      userProfile: null
+      singleShowData: ''
     }
+  }
+
+  componentDidMount(){
+    axios.get('/config')
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   handleInputChange = (e) => {
