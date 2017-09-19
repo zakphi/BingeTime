@@ -19,7 +19,7 @@ class SearchResults extends Component{
   render(){
     return(
       <section className='searchResults'>
-        <h1>search results</h1>
+        <h2>search results</h2>
         {this.renderSearchResults()}
       </section>
       )

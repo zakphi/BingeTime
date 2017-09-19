@@ -4,7 +4,7 @@ import SearchResults from './SearchResults'
 const Home = props => {
   return(
     <main className='home'>
-      <h1>home</h1>
+      <h2>home</h2>
       <form onSubmit={props.handleShowSearch}>
         <input
           type='text'

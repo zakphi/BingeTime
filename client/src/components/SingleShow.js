@@ -24,7 +24,7 @@ const SingleShow = props => {
     <section className='singleShow' style={divStyle}>
       <article className='overlay'></article>
       <article className='showInfo'>
-        <h1>{props.singleShowData.original_name}</h1>
+        <h2>{props.singleShowData.original_name}</h2>
         <p>{props.singleShowData.overview}</p>
         <p>{props.singleShowData.original_name} has {props.singleShowData.number_of_seasons} seasons consisting of {props.singleShowData.number_of_episodes} episodes.</p>
         <p>It will approximately take you {formattedBingeTime} to watch all of {props.singleShowData.original_name}</p>

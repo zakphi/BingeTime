@@ -61,7 +61,7 @@ class  Profile extends Component{
   render(){
     return(
       <section className='profile'>
-        <h1>{this.state.userProfileLoaded ? `${this.state.userProfile.first_name}'s Profile` : ''}</h1>
+        <h2>{this.state.userProfileLoaded ? `${this.state.userProfile.first_name}'s Profile` : ''}</h2>
         {this.renderUsersTvShows()}
       </section>
     )
