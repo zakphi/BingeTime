@@ -15,7 +15,7 @@ const ProfileItem = props => {
       >
         <img
           src={poster_image}
-          alt={props.show.original_name}
+          alt={props.show.title}
         />
       </Link>
     </article>
