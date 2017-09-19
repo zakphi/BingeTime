@@ -38,9 +38,9 @@ class  Profile extends Component{
       }
     })
       .then(res => {
-        console.log(res.data.tv_shows)
+        console.log(res.data)
         this.setState({
-          usersTvShows: res.data.tv_shows,
+          usersTvShows: res.data,
           usersTvShowsLoaded: true
         })
       })
