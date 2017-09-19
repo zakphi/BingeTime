@@ -130,9 +130,9 @@ class App extends Component {
       }
     })
       .then(res => {
+        console.log(res)
         this.setState({
-          showResults: res.data.search_res.results,
-          configResults: res.data.config_res.images,
+          showResults: res.data.results,
           searchResultsLoaded: true
         })
       })
