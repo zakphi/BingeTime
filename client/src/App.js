@@ -236,7 +236,15 @@ class App extends Component {
               />
             }
           />
-          <Route exact path='/profile' component={Profile} />
+          <Route
+            exact
+            path='/profile'
+            render={() =>
+              <Profile
+                configResults={this.state.configResults}
+              />
+            }
+          />
           <Route
             exact
             path={`/tv_shows/${this.state.showID}`}
