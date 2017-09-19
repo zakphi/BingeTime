@@ -1,1 +1,1 @@
-web: cd client && npm start
+web: bundle exec rails server
