@@ -1,15 +1,75 @@
-.overlay{
-  width: 100vw;
-  height: 100%;
-  background-color: rgba(0,0,0,.5);
-  z-index: -5;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.singleShow{
+/* .singleShow{
   position: relative;
   z-index: -10;
   color: #eed5b4;
+}
+
+.overlay{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  z-index: -5;
+  top: 0;
+  left: 0;
+} */
+
+header, header a, footer{
+  background-color: #081c24;
+  color: #01d277;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2{
+  margin: 0;
+  padding: .5em 0;
+}
+
+nav ul li{
+  display: inline-block;
+  padding: .5em 1em;
+  border: 1px solid #01d277;
+  margin: 0 1em;
+}
+
+nav a{
+  text-decoration: none;
+}
+
+nav{
+  padding: .5em 0;
+}
+
+header, footer{
+  text-align: center;
+  height: 15vh
+}
+
+footer img{
+  width: 10%;
+}
+
+main, .profile{
+  overflow: hidden;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.searchResults .searchResult, .profile article{
+  float: left;
+  padding: 0 1em;
+  padding-bottom: 1em;
+}
+
+footer{
+  clear: both;
+}
+
+.singleShow{
+  height: 70vh;
 }
