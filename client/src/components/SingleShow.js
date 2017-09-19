@@ -30,7 +30,10 @@ const SingleShow = props => {
         <p>It will approximately take you {formattedBingeTime} to watch all of {props.singleShowData.original_name}</p>
       </article>
       {props.auth
-        ? <button onClick={props.handleSaveShow}>save show</button>
+        ? <article className='showManageBtns'>
+            <button onClick={props.handleSaveShow}>save show</button>
+            <button onClick={() => props.handleDeleteShow(props.singleShowData.id)}>delete show</button>
+          </article>
         : ''}
     </section>
   )

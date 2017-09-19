@@ -1,5 +1,5 @@
 class TvShowsController < ApiController
-  before_action :require_login, except: [:show, :search, :img_config]
+  before_action :require_login, except: [:show, :search, :img_config, :destroy]
 
   def index
     tv_shows = TvShow.where(user_id: current_user.id).reverse
@@ -39,6 +39,11 @@ class TvShowsController < ApiController
     response = HTTParty.get("https://api.themoviedb.org/3/configuration?api_key=#{tmdb_key}")
 
     render json: response
+  end
+
+  def destroy
+    showID = params[:id]
+    TvShow.where(user_id: current_user.id, external_id: showID).destroy_all
   end
 
   private

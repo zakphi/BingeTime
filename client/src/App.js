@@ -188,6 +188,21 @@ class App extends Component {
       })
   }
 
+  handleDeleteShow = (showID) => {
+    axios.delete(`/tv_shows/${showID}`, {
+      headers: {
+        'Authorization': `Token ${Auth.getToken()}`,
+        token: Auth.getToken()
+      }
+    })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   render() {
     return (
       <Router>
@@ -255,6 +270,7 @@ class App extends Component {
                 configResults={this.state.configResults}
                 handleSaveShow={this.handleSaveShow}
                 auth={this.state.auth}
+                handleDeleteShow={this.handleDeleteShow}
               />
             }
           />
