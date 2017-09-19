@@ -133,6 +133,7 @@ class App extends Component {
       }
     })
       .then(res => {
+        console.log(res)
         this.setState({
           showResults: res.data.results,
           searchResultsLoaded: true
