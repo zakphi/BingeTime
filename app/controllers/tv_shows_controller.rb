@@ -2,7 +2,7 @@ class TvShowsController < ApiController
   before_action :require_login, except: [:show, :search, :img_config]
 
   def index
-    tv_shows = TvShow.where(user_id: current_user.id)
+    tv_shows = TvShow.where(user_id: current_user.id).reverse
     render json: tv_shows
   end
 
