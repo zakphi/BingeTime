@@ -34,7 +34,8 @@ class App extends Component {
       showResults: null,
       searchResultsLoaded: false,
       showID: '',
-      singleShowData: ''
+      singleShowData: '',
+      configResults: ''
     }
   }
 
@@ -42,6 +43,9 @@ class App extends Component {
     axios.get('/config')
       .then(res => {
         console.log(res)
+        this.setState({
+          configResults: res.data.images
+        })
       })
       .catch(err => {
         console.log(err)
