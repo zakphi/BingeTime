@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ProfileItem = props => {
   let base_url = props.configResults.secure_base_url
@@ -8,10 +9,15 @@ const ProfileItem = props => {
 
   return(
     <article>
-      <img
-        src={poster_image}
-        alt={props.show.original_name}
-      />
+      <Link
+        to={`/tv_shows/${props.show.external_id}`}
+        onClick={ () => {props.handleSingleShowSearch(props.show.external_id)} }
+      >
+        <img
+          src={poster_image}
+          alt={props.show.original_name}
+        />
+      </Link>
     </article>
   )
 }

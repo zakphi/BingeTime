@@ -53,6 +53,7 @@ class  Profile extends Component{
                   key={show.id}
                   show={show}
                   configResults={this.props.configResults}
+                  handleSingleShowSearch={this.props.handleSingleShowSearch}
                 />
       })
     }

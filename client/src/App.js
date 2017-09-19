@@ -242,6 +242,7 @@ class App extends Component {
             render={() =>
               <Profile
                 configResults={this.state.configResults}
+                handleSingleShowSearch={this.handleSingleShowSearch}
               />
             }
           />
