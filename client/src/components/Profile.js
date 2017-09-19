@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Auth from '../modules/Auth'
-import SingleUserShow from './SingleUserShow'
+import ProfileItem from './ProfileItem'
 
 class  Profile extends Component{
   constructor(){
@@ -49,7 +49,7 @@ class  Profile extends Component{
   renderUsersTvShows(){
     if(this.state.usersTvShowsLoaded){
       return this.state.usersTvShows.map(show => {
-        return <SingleUserShow
+        return <ProfileItem
                   key={show.id}
                   show={show}
                   configResults={this.props.configResults}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SingleUserShow = props => {
+const ProfileItem = props => {
   let base_url = props.configResults.secure_base_url
   let image_size = 'w185'
   let poster_path = props.show.poster_path
@@ -16,4 +16,4 @@ const SingleUserShow = props => {
   )
 }
 
-export default SingleUserShow
+export default ProfileItem
