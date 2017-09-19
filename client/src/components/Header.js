@@ -3,7 +3,10 @@ import Nav from './Nav'
 
 const Header = props => {
   return(
-    <Nav logoutUser={props.logoutUser} />
+    <header>
+      <h1>BingeTime!</h1>
+      <Nav logoutUser={props.logoutUser} />
+    </header>
   )
 }
 
