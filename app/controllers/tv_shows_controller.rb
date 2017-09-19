@@ -10,7 +10,7 @@ class TvShowsController < ApiController
     showID = params[:id]
     # tmdb_key = Rails.application.secrets.api_key
     # tmdb_key = ENV['api_key']
-    tmdb_key = Rails.application.secrets.api_key || ENV['api_key']
+    # tmdb_key = Rails.application.secrets.api_key || ENV['api_key']
     response = HTTParty.get("https://api.themoviedb.org/3/tv/#{showID}?api_key=#{tmdb_key}")
     render json: response
   end
@@ -30,7 +30,7 @@ class TvShowsController < ApiController
 
   def search
     showName = params[:showName]
-    tmdb_key = Rails.application.secrets.api_key || ENV['api_key']
+    # tmdb_key = Rails.application.secrets.api_key || ENV['api_key']
     # tmdb_key = ENV['api_key']
     puts tmdb_key
     search_res = HTTParty.get("https://api.themoviedb.org/3/search/tv?query=#{showName}&api_key=#{tmdb_key}")
@@ -39,7 +39,7 @@ class TvShowsController < ApiController
   end
 
   def img_config
-    tmdb_key = Rails.application.secrets.api_key
+    # tmdb_key = Rails.application.secrets.api_key
     response = HTTParty.get("https://api.themoviedb.org/3/configuration?api_key=#{tmdb_key}")
 
     render json: response
@@ -54,5 +54,9 @@ class TvShowsController < ApiController
 
   def tv_show_params
     params.require(:tv_show).permit(:external_id, :title, :summary, :poster_path, :run_time)
+  end
+
+  def tmdb_key
+    Rails.application.secrets.api_key || ENV['api_key']
   end
 end
