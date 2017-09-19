@@ -15,6 +15,7 @@ import Login from './components/Login'
 import Profile from './components/Profile'
 import Home from './components/Home'
 import SingleShow from './components/SingleShow'
+import Footer from './components/Footer'
 
 class App extends Component {
   constructor(){
@@ -261,6 +262,7 @@ class App extends Component {
             }
           />
           {this.state.fireRedirect ? <Redirect push to={'/'} /> : '' }
+          <Footer />
         </div>
       </Router>
     );
