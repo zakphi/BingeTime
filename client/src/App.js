@@ -42,7 +42,6 @@ class App extends Component {
   componentDidMount(){
     axios.get('/config')
       .then(res => {
-        console.log(res)
         this.setState({
           configResults: res.data.images
         })
@@ -134,7 +133,6 @@ class App extends Component {
       }
     })
       .then(res => {
-        console.log(res)
         this.setState({
           showResults: res.data.results,
           searchResultsLoaded: true
@@ -180,12 +178,6 @@ class App extends Component {
         token: Auth.getToken()
       }
     })
-      .then(res => {
-        console.log(res)
-      })
-      .catch(err => {
-        console.log(err)
-      })
   }
 
   handleDeleteShow = (showID) => {
@@ -195,12 +187,6 @@ class App extends Component {
         token: Auth.getToken()
       }
     })
-      .then(res => {
-        console.log(res)
-      })
-      .catch(err => {
-        console.log(err)
-      })
   }
 
   render() {
