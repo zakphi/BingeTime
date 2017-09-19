@@ -22,6 +22,7 @@ const SingleShow = props => {
 
   return(
     <section className='singleShow' style={divStyle}>
+      <article className='overlay'></article>
       <article className='showInfo'>
         <h1>{props.singleShowData.original_name}</h1>
         <p>{props.singleShowData.overview}</p>
