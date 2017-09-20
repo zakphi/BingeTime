@@ -62,7 +62,9 @@ class  Profile extends Component{
     return(
       <section className='profile'>
         <h2>{this.state.userProfileLoaded ? `${this.state.userProfile.first_name}'s Profile` : ''}</h2>
+        <div className='profileItems'>
         {this.renderUsersTvShows()}
+        </div>
       </section>
     )
   }
