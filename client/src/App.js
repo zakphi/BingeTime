@@ -195,6 +195,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header logoutUser={this.logoutUser} />
+          <main>
           <Route
             exact
             path='/'
@@ -262,6 +263,7 @@ class App extends Component {
             }
           />
           {this.state.fireRedirect ? <Redirect push to={'/'} /> : '' }
+          </main>
           <Footer />
         </div>
       </Router>

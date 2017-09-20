@@ -1,9 +1,17 @@
+.App{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+}
+
 .singleShow{
   position: relative;
   z-index: 1;
   color: #eed5b4;
   top: 0;
   left: 0;
+  min-width: 100vw;
 }
 
 .overlay{
@@ -79,7 +87,6 @@ footer img{
 
 main, .profile{
   overflow: hidden;
-  width: 90%;
   margin: 0 auto;
   text-align: center;
 }
@@ -99,7 +106,7 @@ footer{
 }
 
 .singleShow{
-  height: 70vh;
+  height: 75vh;
 }
 
 footer p{
@@ -128,4 +135,24 @@ footer p{
 
 input:focus{
   outline: none;
+}
+
+main{
+  display: flex;
+  flex: 1;
+  min-height: 75vh;
+  justify-content: center;
+  align-items: center;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 15vh;
+  flex-direction: column;
+}
+
+.home{
+  flex-direction: column;
 }
