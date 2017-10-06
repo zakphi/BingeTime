@@ -8,7 +8,7 @@ const ProfileItem = props => {
   let poster_image = `${base_url}${image_size}${poster_path}`
 
   return(
-    <article>
+    <article className='profileItem'>
       <Link
         to={`/tv_shows/${props.show.external_id}`}
         onClick={ () => {props.handleSingleShowSearch(props.show.external_id)} }
