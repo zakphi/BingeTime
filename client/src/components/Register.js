@@ -3,6 +3,7 @@ import React from 'react'
 const Register = props => {
   return(
     <section id='register'>
+      <h2>register</h2>
       <form onSubmit={props.handleRegisterSubmit}>
         <input
           type='text'
