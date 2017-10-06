@@ -196,73 +196,73 @@ class App extends Component {
         <div className="App">
           <Header logoutUser={this.logoutUser} />
           <main>
-          <Route
-            exact
-            path='/'
-            render={() =>
-              <Home
-                showName={this.state.showName}
-                handleShowSearch={this.handleShowSearch}
-                handleInputChange={this.handleInputChange}
-                showResults={this.state.showResults}
-                searchResultsLoaded={this.state.searchResultsLoaded}
-                handleSingleShowSearch={this.handleSingleShowSearch}
-                showID={this.state.showID}
-                configResults={this.state.configResults}
-              />
-            }
-          />
-          <Route
-            exact
-            path='/login'
-            render={() =>
-              <Login
-                loginUsername={this.state.loginUsername}
-                loginPassword={this.state.loginPassword}
-                handleInputChange={this.handleInputChange}
-                handleLoginSubmit={this.handleLoginSubmit}
-              />
-            }
-          />
-          <Route
-            exact
-            path='/register'
-            render={() =>
-              <Register
-                registerFirstName={this.state.registerFirstName}
-                registerLastName={this.state.registerLastName}
-                registerEmail={this.state.registerEmail}
-                registerUsername={this.state.registerUsername}
-                registerPassword={this.state.registerPassword}
-                handleInputChange={this.handleInputChange}
-                handleRegisterSubmit={this.handleRegisterSubmit}
-              />
-            }
-          />
-          <Route
-            exact
-            path='/profile'
-            render={() =>
-              <Profile
-                configResults={this.state.configResults}
-                handleSingleShowSearch={this.handleSingleShowSearch}
-              />
-            }
-          />
-          <Route
-            exact
-            path={`/tv_shows/${this.state.showID}`}
-            render={() =>
-              <SingleShow
-                singleShowData={this.state.singleShowData}
-                configResults={this.state.configResults}
-                handleSaveShow={this.handleSaveShow}
-                auth={this.state.auth}
-                handleDeleteShow={this.handleDeleteShow}
-              />
-            }
-          />
-          {this.state.fireRedirect ? <Redirect push to={'/'} /> : '' }
+            <Route
+              exact
+              path='/'
+              render={() =>
+                <Home
+                  showName={this.state.showName}
+                  handleShowSearch={this.handleShowSearch}
+                  handleInputChange={this.handleInputChange}
+                  showResults={this.state.showResults}
+                  searchResultsLoaded={this.state.searchResultsLoaded}
+                  handleSingleShowSearch={this.handleSingleShowSearch}
+                  showID={this.state.showID}
+                  configResults={this.state.configResults}
+                />
+              }
+            />
+            <Route
+              exact
+              path='/login'
+              render={() =>
+                <Login
+                  loginUsername={this.state.loginUsername}
+                  loginPassword={this.state.loginPassword}
+                  handleInputChange={this.handleInputChange}
+                  handleLoginSubmit={this.handleLoginSubmit}
+                />
+              }
+            />
+            <Route
+              exact
+              path='/register'
+              render={() =>
+                <Register
+                  registerFirstName={this.state.registerFirstName}
+                  registerLastName={this.state.registerLastName}
+                  registerEmail={this.state.registerEmail}
+                  registerUsername={this.state.registerUsername}
+                  registerPassword={this.state.registerPassword}
+                  handleInputChange={this.handleInputChange}
+                  handleRegisterSubmit={this.handleRegisterSubmit}
+                />
+              }
+            />
+            <Route
+              exact
+              path='/profile'
+              render={() =>
+                <Profile
+                  configResults={this.state.configResults}
+                  handleSingleShowSearch={this.handleSingleShowSearch}
+                />
+              }
+            />
+            <Route
+              exact
+              path={`/tv_shows/${this.state.showID}`}
+              render={() =>
+                <SingleShow
+                  singleShowData={this.state.singleShowData}
+                  configResults={this.state.configResults}
+                  handleSaveShow={this.handleSaveShow}
+                  auth={this.state.auth}
+                  handleDeleteShow={this.handleDeleteShow}
+                />
+              }
+            />
+            {this.state.fireRedirect ? <Redirect push to={'/'} /> : '' }
           </main>
           <Footer />
         </div>
