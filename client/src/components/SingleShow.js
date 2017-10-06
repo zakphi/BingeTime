@@ -25,7 +25,7 @@ const SingleShow = props => {
       <article id='overlay'></article>
       <article id='showInfo'>
         <h2>{props.singleShowData.original_name}</h2>
-        <p>{props.singleShowData.overview}</p>
+        <p>{props.singleShowData.overview === '' ? 'This show has no description.' : props.singleShowData.overview}</p>
         <p>{props.singleShowData.original_name} has {props.singleShowData.number_of_seasons} seasons consisting of {props.singleShowData.number_of_episodes} episodes.</p>
         <p>It will approximately take you {formattedBingeTime} to watch all of {props.singleShowData.original_name}.</p>
       </article>
