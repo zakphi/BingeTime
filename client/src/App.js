@@ -3,8 +3,7 @@ import './App.css';
 
 import {
   BrowserRouter as Router,
-  Route,
-  Redirect
+  Route
 } from 'react-router-dom'
 import axios from 'axios'
 
@@ -24,8 +23,6 @@ class App extends Component {
     this.state = {
       auth: Auth.isUserAuthenticated(),
       fireRedirect: false,
-      loginUsername: '',
-      loginPassword: '',
       registerFirstName: '',
       registerLastName: '',
       registerEmail: '',
@@ -46,36 +43,6 @@ class App extends Component {
         this.setState({
           configResults: res.data.images
         })
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }
-
-  handleInputChange = (e) => {
-    const name = e.target.name
-    const value = e.target.value
-    this.setState({
-      [name]: value
-    })
-  }
-
-  handleLoginSubmit = (e) => {
-    e.preventDefault()
-    axios.post('/login', {
-      username: this.state.loginUsername,
-      password: this.state.loginPassword
-    })
-      .then(res => {
-        if(res.data.token){
-          Auth.authenticateToken(res.data.token)
-          this.setState({
-            auth: Auth.isUserAuthenticated(),
-            loginUsername: '',
-            loginPassword: '',
-            fireRedirect: true
-          })
-        }
       })
       .catch(err => {
         console.log(err)
@@ -212,18 +179,7 @@ class App extends Component {
                 />
               }
             />
-            <Route
-              exact
-              path='/login'
-              render={() =>
-                <Login
-                  loginUsername={this.state.loginUsername}
-                  loginPassword={this.state.loginPassword}
-                  handleInputChange={this.handleInputChange}
-                  handleLoginSubmit={this.handleLoginSubmit}
-                />
-              }
-            />
+            <Route exact path='/login' component={Login} />
             <Route
               exact
               path='/register'
@@ -262,7 +218,6 @@ class App extends Component {
                 />
               }
             />
-            {this.state.fireRedirect ? <Redirect push to={'/'} /> : '' }
           </main>
           <Footer />
         </div>
