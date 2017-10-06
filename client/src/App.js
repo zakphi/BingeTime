@@ -61,10 +61,7 @@ class App extends Component {
       .then(res => {
         Auth.deauthenticateUser()
         this.setState({
-          auth: Auth.isUserAuthenticated(),
-          loginUsername: '',
-          loginPassword: '',
-          fireRedirect: false
+          auth: Auth.isUserAuthenticated()
         })
       })
   }
