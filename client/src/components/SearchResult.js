@@ -12,7 +12,7 @@ const SearchResult = props => {
     <article className='searchResult'>
       <Link
         to={`/tv_shows/${props.result.id}`}
-        onClick={ () => {props.handleSingleShowSearch(props.result.id)} }>
+        onClick={() => props.handleSingleShowSearch(props.result.id)}>
           <img
               src={poster_image}
               alt={props.result.original_name}
