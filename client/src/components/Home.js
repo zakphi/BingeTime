@@ -3,7 +3,7 @@ import SearchResults from './SearchResults'
 
 const Home = props => {
   return(
-    <main className='home'>
+    <section className='home'>
       <h2>home</h2>
       <form onSubmit={props.handleShowSearch}>
         <input
@@ -24,7 +24,7 @@ const Home = props => {
             configResults={props.configResults}
           />
         : ''}
-    </main>
+    </section>
   )
 }
 
