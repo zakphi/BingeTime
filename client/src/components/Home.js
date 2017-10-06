@@ -5,16 +5,18 @@ const Home = props => {
   return(
     <section id='home'>
       <h2>home</h2>
-      <form onSubmit={props.handleShowSearch}>
-        <input
-          type='text'
-          name='showName'
-          placeholder='Search for Show'
-          value={props.showName}
-          onChange={props.handleInputChange}
-        />
-        <input type='submit' />
-      </form>
+      <article id='search'>
+        <form onSubmit={props.handleShowSearch}>
+          <input
+            type='text'
+            name='showName'
+            placeholder='Search for Show'
+            value={props.showName}
+            onChange={props.handleInputChange}
+          />
+          <input type='submit' />
+        </form>
+      </article>
       {props.searchResultsLoaded
         ? <SearchResults
             showResults={props.showResults}
