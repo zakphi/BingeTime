@@ -22,12 +22,6 @@ class App extends Component {
 
     this.state = {
       auth: Auth.isUserAuthenticated(),
-      fireRedirect: false,
-      registerFirstName: '',
-      registerLastName: '',
-      registerEmail: '',
-      registerUsername: '',
-      registerPassword: '',
       showName: '',
       showResults: null,
       searchResultsLoaded: false,
@@ -43,31 +37,6 @@ class App extends Component {
         this.setState({
           configResults: res.data.images
         })
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }
-
-  handleRegisterSubmit = (e) => {
-    e.preventDefault()
-    axios.post('/users', {
-      user: {
-        first_name: this.state.registerFirstName,
-        last_name: this.state.registerLastName,
-        email: this.state.registerEmail,
-        username: this.state.registerUsername,
-        password: this.state.registerPassword
-      }
-    })
-      .then(res => {
-        if(res.data.token){
-          Auth.authenticateToken(res.data.token)
-          this.setState({
-            auth: Auth.isUserAuthenticated(),
-            fireRedirect: true
-          })
-        }
       })
       .catch(err => {
         console.log(err)
@@ -180,21 +149,7 @@ class App extends Component {
               }
             />
             <Route exact path='/login' component={Login} />
-            <Route
-              exact
-              path='/register'
-              render={() =>
-                <Register
-                  registerFirstName={this.state.registerFirstName}
-                  registerLastName={this.state.registerLastName}
-                  registerEmail={this.state.registerEmail}
-                  registerUsername={this.state.registerUsername}
-                  registerPassword={this.state.registerPassword}
-                  handleInputChange={this.handleInputChange}
-                  handleRegisterSubmit={this.handleRegisterSubmit}
-                />
-              }
-            />
+            <Route exact path='/register' component={Register} />
             <Route
               exact
               path='/profile'
