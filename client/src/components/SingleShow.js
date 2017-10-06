@@ -21,7 +21,7 @@ const SingleShow = props => {
   }
 
   return(
-    <section id='singleShow' style={divStyle}>
+    <section id='singleShow' style={poster_path == null ? null : divStyle}>
       <article id='overlay'></article>
       <article id='showInfo'>
         <h2>{props.singleShowData.original_name}</h2>
