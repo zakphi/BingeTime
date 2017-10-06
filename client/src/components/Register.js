@@ -2,7 +2,7 @@ import React from 'react'
 
 const Register = props => {
   return(
-    <div id='registerForm'>
+    <section id='register'>
       <form onSubmit={props.handleRegisterSubmit}>
         <input
           type='text'
@@ -41,7 +41,7 @@ const Register = props => {
         />
         <input type='submit' value='register' />
       </form>
-    </div>
+    </section>
   )
 }
 
