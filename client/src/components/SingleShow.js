@@ -21,16 +21,16 @@ const SingleShow = props => {
   }
 
   return(
-    <section className='singleShow' style={divStyle}>
-      <article className='overlay'></article>
-      <article className='showInfo'>
+    <section id='singleShow' style={divStyle}>
+      <article id='overlay'></article>
+      <article id='showInfo'>
         <h2>{props.singleShowData.original_name}</h2>
         <p>{props.singleShowData.overview}</p>
         <p>{props.singleShowData.original_name} has {props.singleShowData.number_of_seasons} seasons consisting of {props.singleShowData.number_of_episodes} episodes.</p>
         <p>It will approximately take you {formattedBingeTime} to watch all of {props.singleShowData.original_name}</p>
       </article>
       {props.auth
-        ? <article className='showManageBtns'>
+        ? <article id='showManageBtns'>
             <button onClick={props.handleSaveShow}>save show</button>
             <button onClick={() => props.handleDeleteShow(props.singleShowData.id)}>delete show</button>
           </article>

@@ -18,7 +18,7 @@ class SearchResults extends Component{
 
   render(){
     return(
-      <article className='searchResults'>
+      <article id='searchResults'>
         <h2>search results</h2>
         {this.renderSearchResults()}
       </article>

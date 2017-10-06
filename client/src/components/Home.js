@@ -3,7 +3,7 @@ import SearchResults from './SearchResults'
 
 const Home = props => {
   return(
-    <section className='home'>
+    <section id='home'>
       <h2>home</h2>
       <form onSubmit={props.handleShowSearch}>
         <input

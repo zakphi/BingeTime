@@ -193,7 +193,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div id="App">
           <Header logoutUser={this.logoutUser} />
           <main>
             <Route

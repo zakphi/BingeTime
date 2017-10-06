@@ -2,7 +2,7 @@ import React from 'react'
 
 const Register = props => {
   return(
-    <div className='registerForm'>
+    <div id='registerForm'>
       <form onSubmit={props.handleRegisterSubmit}>
         <input
           type='text'
